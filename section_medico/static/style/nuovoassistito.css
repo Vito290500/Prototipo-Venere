@@ -1,0 +1,85 @@
+.main-content-section{
+    width: 78%;
+    background-color: white;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    border-radius: 0px 5px 5px 5px;
+    box-shadow: 1px 2px 2px 1px rgba(57, 57, 57, 0.2);
+}
+.main-content-section h2{
+    color: grey;
+    margin-left: 5%;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+.column-content{
+    width: 90%;
+    margin-left: 5%;
+}
+.column-content div{
+    margin-top: -0.06rem;
+    display: flex;
+    border: 1px solid rgb(198, 198, 198, 0.5);
+    height: 60px;
+}
+.column-content div input{
+    height: 40px;
+    border: 1px solid rgb(198, 198, 198, 1);
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-left: 1%;
+    width: 86%;
+}
+.tag{
+    width: 10%;
+}
+.tag p{
+    font-family:'Times New Roman', Times, serif;
+    margin-left: 1rem;
+}
+.row1{
+    background-color: white;
+}
+.row2{
+    background-color: rgb(224, 224, 224, 0.4);
+}
+.column-content select{
+    height: 40px;
+    margin-top: 10px;
+    margin-left: 1%;
+    width: 86.5%;
+    border: 1px solid rgb(198, 198, 198, 1);
+}
+.submitt-div{
+    width: 50%;
+    margin-left: 5%;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+}
+.submit{
+    border-radius: 5px;
+    border: 1px solid rgb(0, 195, 255);
+    background-color: white;
+    color: rgb(0, 195, 255);
+    width: 200px;
+    height: 30px;
+    font-size: 15px;
+}
+.delete{
+    border-radius: 5px;
+    border: none;
+    background-color: rgb(224, 224, 224);
+    width: 200px;
+    height: 30px;
+    font-size: 15px; 
+}
+.delete:hover,
+.submit:hover{
+    cursor: pointer;
+}
+
+#nuovo-assistito-btn{
+    background-color: rgb(255, 228, 179);
+    width: 98%;
+    border-radius: 5px 0px 0px 5px;
+}

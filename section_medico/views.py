@@ -9,3 +9,6 @@ class LoginMedico(View):
     def post(self, request):
         return render(request, "structure/HomePageMedico.html")
 
+
+def NuovoAssistito(request):
+    return render(request, "structure/includes/nuovoassistito.html")
