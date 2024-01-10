@@ -12,3 +12,7 @@ class LoginMedico(View):
 
 def NuovoAssistito(request):
     return render(request, "structure/includes/nuovoassistito.html")
+
+
+def ArchivioPazienti(request):
+    return render(request, "structure/includes/archiviopazienti.html")

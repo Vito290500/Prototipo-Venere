@@ -7,11 +7,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Home Page{% endblock %}</title>
     <link rel="stylesheet" href="{% static 'style/homePageMedico.css' %}">
+   
+    <!--JQuery script-->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+   
     <!--Dynamic Css-->
     {% block css %}{% endblock %}
+
 </head>
 <body>
     <div class="header-section">
+        <h2>LOGO E NOME</h2>
     </div>
 
     <div class="main-section">
@@ -21,7 +27,7 @@
                 <img src="{% static 'style/img/homepage/add.png' %}" alt="">
                 <p>Nuovo Assistito</p>
             </a>
-            <a href="{% url 'nuovo-assistito' %}" id="archivio-pazienti-btn">
+            <a href="{% url 'archivio-pazienti' %}" id="archivio-pazienti-btn">
                 <img src="{% static 'style/img/homepage/archiviobtn.png' %}" alt="">
                 <p>Archivio Pazienti</p>
             </a>
@@ -36,7 +42,8 @@
             <a href="{% url 'nuovo-assistito' %}" id="sincronizzazione-btn">
                 <img src="{% static 'style/img/homepage/sincronizzazione.png' %}" alt="">
                 <p>Sincronizzazione</p>
-            </button>
+            </a>
+
             <a href="{% url 'nuovo-assistito' %}"id="configurazione-btn">
                 <img src="{% static 'style/img/homepage/configurazione.png' %}" alt="">
                 <p>Configurazione</p>
@@ -49,5 +56,29 @@
 
         {% block main-content-section %}{% endblock %}
     </div>
+
+    <!--Script for adatpe the left-side-btn text for small screen-->
+
+    <script>
+        $(document).ready(function () {
+          function truncateText(elementId) {
+            var screenWidth = $(window).width();
+            var maxLength = screenWidth < 600 ? 10 : 15; 
+    
+            $('#' + elementId + ' p').each(function () {
+              var text = $(this).text();
+              if (text.length > maxLength) {
+                $(this).text(text.substring(0, maxLength) + '...');
+              }
+            });
+          }
+          truncateText('sincronizzazione-btn');
+          truncateText('configurazione-btn');
+          $(window).resize(function () {
+            truncateText('sincronizzazione-btn');
+            truncateText('configurazione-btn');
+          });
+        });
+    </script>
 </body>
 </html>

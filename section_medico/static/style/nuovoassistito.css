@@ -1,3 +1,8 @@
+body{
+    background-color: rgb(224, 224, 224);
+}
+
+
 .main-content-section{
     width: 78%;
     background-color: white;
@@ -5,6 +10,7 @@
     margin-bottom: 2rem;
     border-radius: 0px 5px 5px 5px;
     box-shadow: 1px 2px 2px 1px rgba(57, 57, 57, 0.2);
+    height: 900px;
 }
 .main-content-section h2{
     color: grey;
@@ -77,9 +83,56 @@
 .submit:hover{
     cursor: pointer;
 }
-
 #nuovo-assistito-btn{
-    background-color: rgb(255, 228, 179);
+    background-color: #4CB9E7;
     width: 98%;
     border-radius: 5px 0px 0px 5px;
+    color: white;
 }
+
+
+/* Media Query for smartphones */
+@media only screen and (max-width: 767px){
+    .main-content-section{
+        height: 750px;
+    }
+    .main-content-section h2{
+        font-size: 15px;
+    }
+    .tag{
+        font-size: 15px;
+        width: 90px;
+    }
+    .tag p{
+        margin-left: 0.5rem;
+        margin-top: 1rem;
+    }
+    
+    .column-content div input,
+    .column-content div select{
+        height: 25px;
+    }
+    .column-content div{
+        height: 50px;
+    }
+    .submitt-div{
+        display: flex;
+        margin-top: 3rem;
+    }
+    .submit,
+    .delete{
+        font-size: 15px;
+        width: 80px;
+        margin-right: 0.5rem;
+    }
+
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1200px){
+    .tag{
+        width: 90px;
+    }
+}
+
+
+
