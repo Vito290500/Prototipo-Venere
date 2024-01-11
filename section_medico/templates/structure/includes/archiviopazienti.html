@@ -10,9 +10,99 @@
 {% endblock %}
 
 {% block main-content-section %}
-
+    
     <div class="main-content-section">
-        <p>That's works!</p>
+        <div class="barra-ricerca">
+            <input type="text" class="barra-ricerca-input" placeholder="Inserire alcune lettere del cognome o del nome del paziente">
+            <div class="filtri">
+                <p>Filtra</p>
+                <select name="filtri-select" id="">
+                    <option value="1">Tutti</option>
+                    <option value="2">- Nome</option>
+                    <option value="3">+ Nome</option>
+                    <option value="4">- Data</option>
+                    <option value="5">+ Data</option>
+                </select>
+            </div>
+        </div>
+        
+        <table id="myTable">
+            <thead>
+                <tr>
+                    <th>Cognome</th>
+                    <th>Name</th>
+                    <th>Data di nascita</th>
+                    <th>Codice fiscale</th>
+                    <th>Indirizzo</th>
+                    <th>Dettagli</th>
+                    <th>Fine attività</th>
+                    <th>--</th>
+                </tr>
+            </thead>
+            <tbody id="tableBody">
+                <!-- Populate table rows dynamically using JavaScript -->
+            </tbody>
+        </table>
+        
+        <ul class="pagination" id="pagination"></ul>
     </div>
 
+    <script>
+        // Access the data passed from the Django view 
+        // @ts-ignore
+        const dataFromDjango = {{data_json|safe}};
+        console.log('Data from Django:', dataFromDjango);
+    
+        const itemsPerPage = 10;
+        let currentPage = 1;
+    
+        const tableBody = document.getElementById('tableBody');
+        const pagination = document.getElementById('pagination');
+    
+        console.log('tableBody:', tableBody);
+        console.log('pagination:', pagination);
+    
+        function displayData() {
+            tableBody.innerHTML = '';
+    
+            const start = (currentPage - 1) * itemsPerPage;
+            const end = start + itemsPerPage;
+    
+            for (let i = start; i < end && i < dataFromDjango.length; i++) {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${dataFromDjango[i].cognome}</td>
+                    <td>${dataFromDjango[i].nome}</td>
+                    <td>${dataFromDjango[i]['Data di nascita']}</td>
+                    <td>${dataFromDjango[i]['Codice Fiscale']}</td>
+                    <td>${dataFromDjango[i].Indirizzo}</td>
+                    <td>${dataFromDjango[i].Dettagli}</td>
+                    <td>${dataFromDjango[i]['Fine attività']}</td>
+                    <td>--</td>
+                `;
+                tableBody.appendChild(row);
+            }
+        }
+    
+        function displayPagination() {
+            pagination.innerHTML = '';
+    
+            const totalPages = Math.ceil(dataFromDjango.length / itemsPerPage);
+    
+            for (let i = 1; i <= totalPages; i++) {
+                const li = document.createElement('li');
+                li.textContent = i;
+                li.addEventListener('click', () => {
+                    currentPage = i;
+                    displayData();
+                    displayPagination();
+                });
+                pagination.appendChild(li);
+            }
+        }
+    
+        displayData();
+        displayPagination();
+    </script>
+    
 {% endblock %}
