@@ -7,10 +7,52 @@
     box-shadow: 1px 2px 2px 1px rgba(57, 57, 57, 0.2);
     height: 900px;
 }
-
 #archivio-pazienti-btn{
     background-color: #4CB9E7;
     width: 98%;
     border-radius: 5px 0px 0px 5px;
     color: white;
 }
+.ricerca{
+    background-color: rgb(186, 243, 255);
+    height: 100px;
+    display: flex;
+}
+.barra-container{
+    width: 70%;
+}
+.barra-ricerca-input{
+    border: 1px solid rgba(33, 33, 33, 0.4);
+    height: 40px;
+    border-radius: 5px;
+    margin-top: 30px;
+    font-size: 18px;
+    width: 90%;
+    margin-left: 2.5%;
+}
+.barra-container button{
+    height: 44px;
+    width: 5%;
+    margin-top: 30px;
+    margin-left: -0.4rem;
+}
+.barra-container button:hover{
+    cursor: pointer;
+}
+.barra-ricerca-input:active{
+    outline: none;
+}
+.filtri{
+    margin-top: 30px;
+    width: 30%;
+    display: flex;
+    flex-direction: row;
+}
+.filtri select{
+    height: 40px;
+    width: 40%;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 18px;
+}
+

@@ -12,12 +12,14 @@
 {% block main-content-section %}
     
     <div class="main-content-section">
-        <div class="barra-ricerca">
-            <input type="text" class="barra-ricerca-input" placeholder="Inserire alcune lettere del cognome o del nome del paziente">
+        <div class="ricerca">
+            <div class="barra-container">
+                <input type="text" class="barra-ricerca-input" placeholder="Inserire alcune lettere del cognome o del nome del paziente">
+                <button>🔍</button>
+            </div>
             <div class="filtri">
-                <p>Filtra</p>
                 <select name="filtri-select" id="">
-                    <option value="1">Tutti</option>
+                    <option value="1">Filtra</option>
                     <option value="2">- Nome</option>
                     <option value="3">+ Nome</option>
                     <option value="4">- Data</option>
