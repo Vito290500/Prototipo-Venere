@@ -46,9 +46,13 @@
             </tbody>
         </table>
         
-        <ul class="pagination" id="pagination"></ul>
+        <div class="Pagination">
+            <p>Precedente</p>
+            <ul class="pagination" id="pagination"></ul>
+            <p>Successivo</p>
+        </div>
+        
     </div>
-
     <script>
         // Access the data passed from the Django view 
         // @ts-ignore
@@ -80,8 +84,22 @@
                     <td>${dataFromDjango[i].Indirizzo}</td>
                     <td>${dataFromDjango[i].Dettagli}</td>
                     <td>${dataFromDjango[i]['Fine attività']}</td>
-                    <td>--</td>
+                    <td><button><img src="{% static 'style/img/homepage/delete.png' %}" alt="" width="20px" height="20px"></button></td>
                 `;
+                tableBody.appendChild(row);
+            }
+    
+            // Add placeholders if the page is not filled
+            for (let i = tableBody.children.length; i < itemsPerPage; i++) {
+                const row = document.createElement('tr');
+                row.innerHTML = ` <td>--</td>
+                                    <td>--</td>
+                                    <td>--</td>
+                                    <td>--</td>
+                                    <td>--</td>
+                                    <td>--</td>
+                                    <td>--</td> 
+                                    <td>--</td> `;
                 tableBody.appendChild(row);
             }
         }
@@ -94,11 +112,18 @@
             for (let i = 1; i <= totalPages; i++) {
                 const li = document.createElement('li');
                 li.textContent = i;
+    
+                // Add the 'active' class to the active page
+                if (i === currentPage) {
+                    li.classList.add('active');
+                }
+    
                 li.addEventListener('click', () => {
                     currentPage = i;
                     displayData();
                     displayPagination();
                 });
+    
                 pagination.appendChild(li);
             }
         }
@@ -106,5 +131,4 @@
         displayData();
         displayPagination();
     </script>
-    
 {% endblock %}

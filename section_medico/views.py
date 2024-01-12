@@ -28,15 +28,13 @@ def ArchivioPazienti(request):
     for name in name_example:
         data.append({
             'cognome': name,
-            'nome': '-',
-            'Data di nascita': '-',
-            'Codice Fiscale': '-',
-            'Indirizzo': '-',
-            'Dettagli': '-',
-            'Fine attività': '-'
+            'nome': '',
+            'Data di nascita': '',
+            'Codice Fiscale': '',
+            'Indirizzo': '',
+            'Dettagli': '',
+            'Fine attività': ''
         })
-
-    print(data)
 
     data_json = json.dumps(data)
     return render(request, "structure/includes/archiviopazienti.html", {'data_json': data_json})

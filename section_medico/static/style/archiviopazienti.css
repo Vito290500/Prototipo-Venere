@@ -19,7 +19,8 @@
     display: flex;
 }
 .barra-container{
-    width: 70%;
+    width: 72%;
+    margin-left: 8%;
 }
 .barra-ricerca-input{
     border: 1px solid rgba(33, 33, 33, 0.4);
@@ -27,8 +28,7 @@
     border-radius: 5px;
     margin-top: 30px;
     font-size: 18px;
-    width: 90%;
-    margin-left: 2.5%;
+    width: 85%;
 }
 .barra-container button{
     height: 44px;
@@ -44,15 +44,75 @@
 }
 .filtri{
     margin-top: 30px;
-    width: 30%;
+    width: 15%;
     display: flex;
     flex-direction: row;
 }
 .filtri select{
     height: 40px;
-    width: 40%;
+    width: 80%;
     border-radius: 5px;
     text-align: center;
     font-size: 18px;
 }
+#myTable{
+    width: 90%;
+    height: 500px;
+    margin: 5% 5% 5% 5%;
+    border: 1px solid rgba(33, 33, 33, 0.4);
+}
+#myTable thead{
+    background-color: rgb(177, 177, 177);
+    height: 50px;
+    font-size: 20px;
+    color: rgb(57, 57, 57);
+}
+#tableBody{
+    text-align: center;
+}
+#tableBody td{
+    border-right: 1px solid rgba(33, 33, 33, 0.2);
+    border-bottom: 1px solid rgba(33, 33, 33, 0.2);
+}
+#tableBody td button{
+    border: none;
+    background-color: white;
+}
+#tableBody td button:hover{
+    cursor: pointer;
+}
 
+.Pagination{
+    display: flex;
+    border: 1px solid rgba(33, 33, 33, 0.2);
+    width: 30%;
+    margin-left: 60%;
+}
+.pagination{
+    display: flex;
+    list-style-type: none;
+    width: 60%;
+}
+.Pagination p{
+    color: rgb(159, 159, 159);
+    width: 20%;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+.pagination li{
+    margin-left: 1rem;
+}
+.pagination li:hover{
+    cursor: pointer;
+    background-color: #4CB9E7;
+}
+
+.pagination li.active {
+    border: 1px solid rgba(33, 33, 33, 0.2);
+    border-radius: 5px;
+    background-color: #4CB9E7;
+    text-align: center;
+    width: 30px;
+    height: 20px;
+    color: white;
+}
