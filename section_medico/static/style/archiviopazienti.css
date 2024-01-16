@@ -4,8 +4,8 @@
     margin-top: 2rem;
     margin-bottom: 2rem;
     border-radius: 0px 5px 5px 5px;
-    box-shadow: 1px 2px 2px 1px rgba(57, 57, 57, 0.2);
-    height: 900px;
+    box-shadow: 1px 2px 15px 10px rgba(57, 57, 57, 0.2);
+    height: 1000px;
 }
 #archivio-pazienti-btn{
     background-color: #4CB9E7;
@@ -14,7 +14,7 @@
     color: white;
 }
 .ricerca{
-    background-color: rgb(186, 243, 255);
+    background-color: lightgrey;
     height: 100px;
     display: flex;
 }
@@ -62,7 +62,7 @@
     border: 1px solid rgba(33, 33, 33, 0.4);
 }
 #myTable thead{
-    background-color: rgb(177, 177, 177);
+    background-color: #4CB9E7;
     height: 50px;
     font-size: 20px;
     color: rgb(57, 57, 57);
@@ -101,6 +101,7 @@
 }
 .pagination li{
     margin-left: 1rem;
+    margin-right: 1rem;
 }
 .pagination li:hover{
     cursor: pointer;

@@ -23,6 +23,7 @@
     <div class="main-section">
 
         <div class="left-side-tools-bar">
+
             <a href="{% url 'nuovo-assistito' %}" id="nuovo-assistito-btn" >
                 <img src="{% static 'style/img/homepage/add.png' %}" alt="">
                 <p>Nuovo Assistito</p>
@@ -31,23 +32,24 @@
                 <img src="{% static 'style/img/homepage/archiviobtn.png' %}" alt="">
                 <p>Archivio Pazienti</p>
             </a>
-            <a href="{% url 'nuovo-assistito' %}" id="elenco-referto-btn">
+            <a href="{% url 'accettazione' %}"id="accettazione-btn">
+                <img src="{% static 'style/img/homepage/accettazione.png' %}" alt="">
+                <p>Accettazione</p>
+            </a>
+            <a href="{% url 'elenco-referti' %}" id="elenco-referto-btn">
                 <img src="{% static 'style/img/homepage/pdf.png' %}" alt="">
                 <p>Elenco Referti</p>
             </a>
-            <a href="{% url 'nuovo-assistito' %}" id="tabella-analisi-btn">
+            <a href="{% url 'tabella-analisi' %}" id="tabella-analisi-btn">
                 <img src="{% static 'style/img/homepage/analisibtn.png' %}" alt="">
                 <p>Tabella Analisi</p>
             </a>
-            <a href="{% url 'nuovo-assistito' %}" id="sincronizzazione-btn">
+            <a href="{% url 'sincronizzazione' %}" id="sincronizzazione-btn">
                 <img src="{% static 'style/img/homepage/sincronizzazione.png' %}" alt="">
                 <p>Sincronizzazione</p>
             </a>
 
-            <a href="{% url 'nuovo-assistito' %}"id="configurazione-btn">
-                <img src="{% static 'style/img/homepage/configurazione.png' %}" alt="">
-                <p>Configurazione</p>
-            </a>
+            
             <a href="{% url 'nuovo-assistito' %}"id="esci-btn">
                 <img src="{% static 'style/img/homepage/logout.png' %}" alt="">
                 <p>Esci</p>

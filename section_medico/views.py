@@ -2,7 +2,6 @@ import json
 from django.shortcuts import render
 from django.views import View
 
-# Create your views here.
 class LoginMedico(View):
     def get(self, request):
         return render(request, "structure/login_medico.html")
@@ -10,10 +9,8 @@ class LoginMedico(View):
     def post(self, request):
         return render(request, "structure/HomePageMedico.html")
 
-
 def NuovoAssistito(request):
     return render(request, "structure/includes/nuovoassistito.html")
-
 
 def ArchivioPazienti(request):
     name_example = [
@@ -38,3 +35,16 @@ def ArchivioPazienti(request):
 
     data_json = json.dumps(data)
     return render(request, "structure/includes/archiviopazienti.html", {'data_json': data_json})
+
+
+def Accettazione(request):
+    return render(request, "structure/includes/accettazione.html")
+
+def Elenco_Referti(request):
+    return render(request, "structure/includes/elenco_referti.html")
+
+def Tabella_Analisi(request):
+    return render(request, "structure/includes/tabella_analisi.html")
+
+def Sincronizzazione(request):
+    return render(request, "structure/includes/sincronizzazione.html")

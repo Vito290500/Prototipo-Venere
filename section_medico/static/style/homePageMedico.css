@@ -48,6 +48,8 @@ body{
     color: white;
 }
 
+
+
 /* Media Query for smartphones */
 @media only screen and (max-width: 767px){
     .left-side-tools-bar a{
