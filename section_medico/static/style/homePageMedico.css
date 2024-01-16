@@ -11,7 +11,11 @@ body{
     box-shadow: 1px 2px 2px 1px rgba(57, 57, 57, 0.2);
     color: white;
     text-align: center;
-    
+    display: flex;
+}
+.header-section h2{
+    position: absolute;
+    left: 2rem;
 }
 .main-section{
     display: flex;
@@ -46,6 +50,33 @@ body{
     cursor: pointer;
     background-color: #4CB9E7;
     color: white;
+}
+
+.other{
+    display: flex;
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+}
+.other a{
+    text-decoration: none;
+    color: white;
+    margin-left: 1rem;
+    border-radius: 5px;
+    box-shadow: 1px 2px 2px 1px rgba(57, 57, 57, 0.2);
+    background-color: #041760;
+    height: 50px;
+    width: 70px;
+}
+.other a p{
+    margin-top: 0rem;
+    text-align: center;
+}
+
+.other a:hover{
+    cursor: pointer;
+    background-color: #4CB9E7;
+    
 }
 
 

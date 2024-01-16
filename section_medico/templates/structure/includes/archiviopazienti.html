@@ -38,7 +38,8 @@
                     <th>Indirizzo</th>
                     <th>Dettagli</th>
                     <th>Fine attività</th>
-                    <th>--</th>
+                    <th><img src="{% static 'style/img/homepage/accept.png' %}" alt="" width="20px" height="20px" alt=""></th>
+                    <th><img src="{% static 'style/img/homepage/tools.png' %}" alt="" width="20px" height="20px"></th>
                 </tr>
             </thead>
             <tbody id="tableBody">
@@ -52,7 +53,27 @@
             <p>Successivo</p>
         </div>
         
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal()">&times;</span>
+
+                <h1>Accettazione</h1>
+
+                <div class="check-button">
+                    {% for exam in esami %}
+                        <div class="esami">
+                            <label for="option"> {{ exam }}</label>
+                            <input type="radio" id="option" name="gender" value="male">
+                        </div>
+                    {% endfor %}
+                </div>
+                <button onclick="acceptEntry()">Save</button>
+            </div>
+        </div>
     </div>
+
+
+
     <script>
         // Access the data passed from the Django view 
         // @ts-ignore
@@ -68,6 +89,7 @@
         console.log('tableBody:', tableBody);
         console.log('pagination:', pagination);
     
+        //Display django data into html table
         function displayData() {
             tableBody.innerHTML = '';
     
@@ -84,6 +106,7 @@
                     <td>${dataFromDjango[i].Indirizzo}</td>
                     <td>${dataFromDjango[i].Dettagli}</td>
                     <td>${dataFromDjango[i]['Fine attività']}</td>
+                    <td><button class="accept" onclick="openModal()"><img src="{% static 'style/img/homepage/accettazione.png' %}" alt="" width="20px" height="20px"></button></td>
                     <td><button><img src="{% static 'style/img/homepage/delete.png' %}" alt="" width="20px" height="20px"></button></td>
                 `;
                 tableBody.appendChild(row);
@@ -103,7 +126,7 @@
                 tableBody.appendChild(row);
             }
         }
-    
+        //DIsplay Pagination
         function displayPagination() {
             pagination.innerHTML = '';
     
@@ -130,5 +153,21 @@
     
         displayData();
         displayPagination();
+
+
+        //Show Modal For Accettazione
+        function openModal() {
+        document.getElementById('myModal').style.display = 'block';
+        }
+
+        function closeModal() {
+            document.getElementById('myModal').style.display = 'none';
+        }
+
+        function acceptEntry() {
+            console.log('Entry accepted');
+            closeModal(); 
+        }
+
     </script>
 {% endblock %}
