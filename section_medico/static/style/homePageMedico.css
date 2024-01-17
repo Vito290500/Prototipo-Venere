@@ -62,11 +62,10 @@ body{
     text-decoration: none;
     color: white;
     margin-left: 1rem;
-    border-radius: 5px;
-    box-shadow: 1px 2px 2px 1px rgba(57, 57, 57, 0.2);
     background-color: #041760;
     height: 50px;
     width: 70px;
+    border: none;
 }
 .other a p{
     margin-top: 0rem;

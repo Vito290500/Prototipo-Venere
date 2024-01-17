@@ -81,7 +81,6 @@
 #tableBody td button:hover{
     cursor: pointer;
 }
-
 .Pagination{
     display: flex;
     border: 1px solid rgba(33, 33, 33, 0.2);
@@ -107,7 +106,6 @@
     cursor: pointer;
     background-color: #4CB9E7;
 }
-
 .pagination li.active {
     border: 1px solid rgba(33, 33, 33, 0.2);
     border-radius: 5px;
@@ -120,43 +118,96 @@
 
 
 
-/* Style for the modal */
+/* Modal Style */
 .modal {
     display: none;
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: #fff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    width: 600px;
-    height: 600px;
-}
-
-.modal-content {
+    z-index: 1;
+    width: 80%;
+    max-width: 800px;
+    background-color: #fefefe;
     padding: 20px;
+    border: 1px solid #888;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-.modal-content h2{
-    color: blue;
+.modal-content {
+    padding: 20px; /* Set the maximum height for the modal content */
 }
-
-/* Style to close the modal */
+.Head-section{
+    display: flex;
+    width: 100%;
+}
+.Head-section h1{
+    color: #041760;
+    margin-top: -1rem;
+}
 .close {
     position: absolute;
-    top: 10px;
-    right: 10px;
+    top: 1rem;
+    right: 2rem;
     cursor: pointer;
+    font-size: 30px;
+}
+.close:hover{
+    transform: scale(1.2);
+}
+.close:active{
+    color: #4CB9E7;
 }
 
-.check-button{
+
+.Check-up-exam{
+    display: flex;
+    width: 100%;
+}
+.Search-exam{
+    width: 50%;
+    margin-top: 2rem;
+}
+.Search-exam input{
+    border: none;
+    border-bottom: 0.5px solid lightgrey;
+    width: 300px;
+    font-size: 20px;
+    height: 40px;
+}
+.search-result{
+    border: 0.5px solid lightgrey;
+    width: 300px;
+    margin-top: 1rem;
+    height: 200px;
+    text-align: center;
+}
+.Search-exam .search{
+    width: 40px;
+    height: 40px;
+    border: none;
+    background-color: white;
+    margin-left: 0rem;
+}
+.search:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+
+.check-list{
+    width: 50%;
+}
+.check-button {
+    max-height: 400px; 
+    overflow-y: auto; 
     display: flex;
     flex-direction: column;
 }
-.check-button label{
+.check-button label {
     color: #4CB9E7;
     width: 250px;
     margin-top: 1rem;
 }
-.esami{
+.esami {
     display: flex;
 }

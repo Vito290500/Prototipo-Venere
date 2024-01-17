@@ -55,19 +55,39 @@
         
         <div id="myModal" class="modal">
             <div class="modal-content">
-                <span class="close" onclick="closeModal()">&times;</span>
 
-                <h1>Accettazione</h1>
-
-                <div class="check-button">
-                    {% for exam in esami %}
-                        <div class="esami">
-                            <label for="option"> {{ exam }}</label>
-                            <input type="radio" id="option" name="gender" value="male">
-                        </div>
-                    {% endfor %}
+                <div class="Head-section">
+                    <h1>Accettazione</h1>
+                    <span class="close" onclick="closeModal()">&times;</span>
                 </div>
-                <button onclick="acceptEntry()">Save</button>
+
+
+
+                <div class="Check-up-exam">
+                    <div class="Search-exam">
+                        <input type="text" placeholder="Inserisci qui l'esame da ricercare">
+                        <button class="search">🔍</button>
+
+                        <div class="search-result">
+                            <p>nessun risultato trovato</p>
+                        </div>
+                        <button onclick="acceptEntry()">Save</button>
+                    </div>
+
+
+                    <div class="check-list">
+                        <div class="check-button">
+                            {% for exam in esami %}
+                                <div class="esami">
+                                    <label for="option"> {{ exam }}</label>
+                                    <input type="checkbox" id="option" name="exam" value="{{ exam }}">
+                                </div>
+                            {% endfor %}
+                        </div>
+                        
+                    </div>
+                    
+                </div>
             </div>
         </div>
     </div>
