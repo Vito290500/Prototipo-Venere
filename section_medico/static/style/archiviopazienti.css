@@ -192,6 +192,21 @@
     cursor: pointer;
     transform: scale(1.1);
 }
+.save{
+    color: #4CB9E7;
+    border:0.5px solid #4CB9E7;
+    width: 150px;
+    background-color: white;
+    border-radius: 5px;
+    margin-top: 5rem;
+    height: 25px;
+    font-size: 18px;
+}
+.save:hover{
+    transform: scale(1.1);
+}
+
+
 
 
 .check-list{
