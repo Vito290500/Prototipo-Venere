@@ -61,9 +61,9 @@
                         <p>Provincia:</p>
                     </div>
                     <select name="Provincia" id="">
-                        <!--Aggiungere Table per province nel database
-                            itera il risultato per ottenere le opzioni 
-                            della tendina.-->
+                        {% for prov in province %}
+                            <option value="option">{{ prov }}</option>
+                        {% endfor %}
                     </select>
                 </div>
                 <div class="row2">

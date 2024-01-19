@@ -82,14 +82,28 @@ body{
 
 /* Media Query for smartphones */
 @media only screen and (max-width: 767px){
+    .header-section h2{
+        font-size: 20px;
+        left: 0.5rem;
+    }
+    .other a{
+        height: 30px;
+        margin-top: -0.5rem;
+        margin-right: -1rem;
+    }
+    .other a img{
+        height: 25px;
+        width: 35px;
+    }
+
     .left-side-tools-bar a{
         height: 90px;
         font-size: 10px;
         margin-left: 5%;
     }
     .left-side-tools-bar a img{
-        width: 40px;
-        height: 40px;
+        width: 35px;
+        height: 35px;
     } 
     .header-section{
         height: 60px;

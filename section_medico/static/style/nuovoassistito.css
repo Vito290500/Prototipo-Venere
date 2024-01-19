@@ -101,10 +101,15 @@ body{
 /* Media Query for smartphones */
 @media only screen and (max-width: 767px){
     .main-content-section{
-        height: 750px;
+        height: 710px;
+        margin-left: 0.2rem;
     }
     .main-content-section h2{
         font-size: 15px;
+    }
+
+    .title{
+        height: 50px;
     }
     .tag{
         font-size: 15px;
@@ -114,7 +119,9 @@ body{
         margin-left: 0.5rem;
         margin-top: 1rem;
     }
-    
+    .table-content-layout{
+        margin-top: 1rem;
+    }
     .column-content div input,
     .column-content div select{
         height: 25px;
