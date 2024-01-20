@@ -1,0 +1,21 @@
+{% extends 'structure/homePageMedico.html' %}
+{% load static %}
+
+{% block title %}
+    Cartella Paziente
+{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'style/cartella_paziente.css' %}">
+{% endblock %}
+
+{% block main-content-section %}
+    
+    <div class="main-content-section">
+        <a href="{% url 'archivio-pazienti' %}"><img src="{% static 'style/img/archivio_pazienti/indietro.png' %}" alt=""></a>
+
+
+        <h1></h1>
+    </div>
+
+{% endblock %}

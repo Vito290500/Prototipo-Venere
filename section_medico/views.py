@@ -38,7 +38,6 @@ def NuovoAssistito(request):
     })
 
 
-
 def ArchivioPazienti(request):
     name_exam = ['Breath Test Helicobacter Pylori', 'Breath Test Lattosio', 'Breath Test Lattosio',
                  'Check Up Routine', 'Check Up Tiroide Base', 'Check Up Tiroide Avamzato', 
@@ -54,20 +53,25 @@ def ArchivioPazienti(request):
 
     data = []
 
-    for name in name_example:
+    for count in range(0, len(name_example)-1):
         data.append({
-            'cognome': name,
+            'cognome': name_example[count] ,
             'nome': '',
             'Data di nascita': '',
             'Codice Fiscale': '',
             'Indirizzo': '',
             'Dettagli': '',
-            'Fine attività': ''
+            'Fine attività': '',
+            'id': count
         })
 
     data_json = json.dumps(data)
     return render(request, "structure/includes/archiviopazienti.html", {'data_json': data_json,
                                                                         'esami': name_exam}, )
+
+
+def Cartella_Paziente(request):
+    return render(request, "structure/includes/cartella_paziente.html")
 
 
 def Calendario_Prenotazioni(request):

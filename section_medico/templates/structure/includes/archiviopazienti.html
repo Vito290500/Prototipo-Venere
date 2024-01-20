@@ -30,6 +30,7 @@
         
         <table id="myTable">
             <thead>
+                
                 <tr>
                     <th>Cognome</th>
                     <th>Name</th>
@@ -38,12 +39,17 @@
                     <th>Indirizzo</th>
                     <th>Dettagli</th>
                     <th>Fine attività</th>
-                    <th><img src="{% static 'style/img/homepage/accept.png' %}" alt="" width="20px" height="20px" alt=""></th>
-                    <th><img src="{% static 'style/img/homepage/tools.png' %}" alt="" width="20px" height="20px"></th>
+                    <th><img src="{% static 'style/img/archivio_pazienti/cartella_documenti.png' %}" alt="" width="20px" height="20px" alt=""></th>
+                    <th><img src="{% static 'style/img/archivio_pazienti/accept.png' %}" alt="" width="20px" height="20px"></th>
+                    <th><img src="{% static 'style/img/archivio_pazienti/tools.png' %}" alt="" width="20px" height="20px"></th>
                 </tr>
+                
+                
             </thead>
             <tbody id="tableBody">
-                <!-- Populate table rows dynamically using JavaScript -->
+                <a href="" id="link">
+                    <!-- Populate table rows dynamically using JavaScript -->
+                </a>
             </tbody>
         </table>
         
@@ -60,7 +66,6 @@
                     <h1>Accettazione</h1>
                     <span class="close" onclick="closeModal()">&times;</span>
                 </div>
-
 
 
                 <div class="Check-up-exam">
@@ -117,19 +122,24 @@
             const end = start + itemsPerPage;
     
             for (let i = start; i < end && i < dataFromDjango.length; i++) {
-                const row = document.createElement('tr');
-                row.innerHTML = `
-                    <td>${dataFromDjango[i].cognome}</td>
-                    <td>${dataFromDjango[i].nome}</td>
-                    <td>${dataFromDjango[i]['Data di nascita']}</td>
-                    <td>${dataFromDjango[i]['Codice Fiscale']}</td>
-                    <td>${dataFromDjango[i].Indirizzo}</td>
-                    <td>${dataFromDjango[i].Dettagli}</td>
-                    <td>${dataFromDjango[i]['Fine attività']}</td>
-                    <td><button class="accept" onclick="openModal()"><img src="{% static 'style/img/homepage/accettazione.png' %}" alt="" width="20px" height="20px"></button></td>
-                    <td><button><img src="{% static 'style/img/homepage/delete.png' %}" alt="" width="20px" height="20px"></button></td>
-                `;
-                tableBody.appendChild(row);
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                <td>${dataFromDjango[i].cognome}</td>
+                <td>${dataFromDjango[i].nome}</td>
+                <td>${dataFromDjango[i]['Data di nascita']}</td>
+                <td>${dataFromDjango[i]['Codice Fiscale']}</td>
+                <td>${dataFromDjango[i].Indirizzo}</td>
+                <td>${dataFromDjango[i].Dettagli}</td>
+                <td>${dataFromDjango[i]['Fine attività']}</td>
+                <td>
+                    <a href="{% url 'cartella-paziente'%}" class="cartella-paziente">
+                        <img src="{% static 'style/img/archivio_pazienti/entra_cartella.png' %}" alt="" width="20px" height="20px">
+                    </a>
+                </td>
+                <td><button class="accept" onclick="openModal()"><img src="{% static 'style/img/archivio_pazienti/accettazione.png' %}" alt="" width="20px" height="20px"></button></td>
+                <td><button><img src="{% static 'style/img/archivio_pazienti/delete.png' %}" alt="" width="20px" height="20px"></button></td>
+            `;
+            tableBody.appendChild(row);
             }
     
             // Add placeholders if the page is not filled
@@ -188,6 +198,7 @@
             console.log('Entry accepted');
             closeModal(); 
         }
+
 
     </script>
 {% endblock %}

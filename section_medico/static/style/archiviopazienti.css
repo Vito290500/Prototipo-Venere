@@ -81,6 +81,10 @@
 #tableBody td button:hover{
     cursor: pointer;
 }
+
+
+
+/* Pagination Style */
 .Pagination{
     display: flex;
     border: 1px solid rgba(33, 33, 33, 0.2);
@@ -115,7 +119,6 @@
     height: 20px;
     color: white;
 }
-
 
 
 /* Modal Style */
@@ -157,8 +160,6 @@
 .close:active{
     color: #4CB9E7;
 }
-
-
 .Check-up-exam{
     display: flex;
     width: 100%;
@@ -205,10 +206,6 @@
 .save:hover{
     transform: scale(1.1);
 }
-
-
-
-
 .check-list{
     width: 50%;
 }
@@ -226,6 +223,7 @@
 .esami {
     display: flex;
 }
+
 
 
 /* Media Query for smartphones */

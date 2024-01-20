@@ -9,4 +9,5 @@ urlpatterns = [
     path("Elenco Referti", views.Elenco_Referti, name="elenco-referti"),
     path("Tabella Analisi", views.Tabella_Analisi, name="tabella-analisi"),
     path("Sincronizzazione", views.Sincronizzazione, name="sincronizzazione"),
+    path("Cartella Paziente", views.Cartella_Paziente, name="cartella-paziente"),
 ] 
