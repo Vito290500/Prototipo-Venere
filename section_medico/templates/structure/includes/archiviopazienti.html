@@ -122,23 +122,26 @@
             const end = start + itemsPerPage;
     
             for (let i = start; i < end && i < dataFromDjango.length; i++) {
-            const row = document.createElement('tr');
-            row.innerHTML = `
-                <td>${dataFromDjango[i].cognome}</td>
-                <td>${dataFromDjango[i].nome}</td>
-                <td>${dataFromDjango[i]['Data di nascita']}</td>
-                <td>${dataFromDjango[i]['Codice Fiscale']}</td>
-                <td>${dataFromDjango[i].Indirizzo}</td>
-                <td>${dataFromDjango[i].Dettagli}</td>
-                <td>${dataFromDjango[i]['Fine attività']}</td>
-                <td>
-                    <a href="{% url 'cartella-paziente'%}" class="cartella-paziente">
-                        <img src="{% static 'style/img/archivio_pazienti/entra_cartella.png' %}" alt="" width="20px" height="20px">
-                    </a>
-                </td>
-                <td><button class="accept" onclick="openModal()"><img src="{% static 'style/img/archivio_pazienti/accettazione.png' %}" alt="" width="20px" height="20px"></button></td>
-                <td><button><img src="{% static 'style/img/archivio_pazienti/delete.png' %}" alt="" width="20px" height="20px"></button></td>
-            `;
+
+                const row = document.createElement('tr');
+                const patientId = dataFromDjango[i].id; 
+                
+                row.innerHTML = `
+                    <td>${dataFromDjango[i].cognome}</td>
+                    <td>${dataFromDjango[i].nome}</td>
+                    <td>${dataFromDjango[i]['Data di nascita']}</td>
+                    <td>${dataFromDjango[i]['Codice Fiscale']}</td>
+                    <td>${dataFromDjango[i].Indirizzo}</td>
+                    <td>${dataFromDjango[i].Dettagli}</td>
+                    <td>${dataFromDjango[i]['Fine attività']}</td>
+                    <td>
+                        <a href="{% url 'cartella-paziente' %}?id=${patientId}" class="cartella-paziente">
+                            <img src="{% static 'style/img/archivio_pazienti/entra_cartella.png' %}" alt="" width="20px" height="20px">
+                        </a>
+                    </td>
+                    <td><button class="accept" onclick="openModal()"><img src="{% static 'style/img/archivio_pazienti/accettazione.png' %}" alt="" width="20px" height="20px"></button></td>
+                    <td><button><img src="{% static 'style/img/archivio_pazienti/delete.png' %}" alt="" width="20px" height="20px"></button></td>
+                `;
             tableBody.appendChild(row);
             }
     

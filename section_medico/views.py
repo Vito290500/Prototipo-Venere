@@ -39,6 +39,8 @@ def NuovoAssistito(request):
 
 
 def ArchivioPazienti(request):
+
+    #IMPLEMENT THIS WITH BACKEND
     name_exam = ['Breath Test Helicobacter Pylori', 'Breath Test Lattosio', 'Breath Test Lattosio',
                  'Check Up Routine', 'Check Up Tiroide Base', 'Check Up Tiroide Avamzato', 
                  'Check Up Coagulazione', 'Check Up Malattie Sessualmente Trasmissibili', 'Check Up Menopausa', 
@@ -71,7 +73,22 @@ def ArchivioPazienti(request):
 
 
 def Cartella_Paziente(request):
-    return render(request, "structure/includes/cartella_paziente.html")
+
+    #IMPLEMENT THIS WITH BACKEND
+    patient_id = request.GET.get('id')
+
+    name_example = [
+    'Achille', 'Achille', 'Ada', 'Adam', 'Adelaide', 'Adele', 'Aden', 'Adolfo', 'Adriana', 'Adriano',
+    'Agape', 'Agata', 'Agatha', 'Agnese', 'Agostina', 'Agostino', 'Aiace', 'Aida', 'Akira', 'Alba',
+    'Albarosa', 'Alberico', 'Albert', 'Alberta', 'Alberto', 'Aldo', 'Alejandro', 'Alessandra', 'Alessandro',
+    'Alessia', 'Alessio', 'Alexander', 'Alfio', 'Alfonso', 'Alfredo', 'Alice', 'Martina'
+    ]
+
+    data = name_example[int(patient_id)]
+
+    return render(request, "structure/includes/cartella_paziente.html",{
+        'data': data
+    })
 
 
 def Calendario_Prenotazioni(request):
