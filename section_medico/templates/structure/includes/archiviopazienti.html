@@ -29,8 +29,7 @@
         </div>
         
         <table id="myTable">
-            <thead>
-                
+            <thead>        
                 <tr>
                     <th>Cognome</th>
                     <th>Name</th>
@@ -42,9 +41,7 @@
                     <th><img src="{% static 'style/img/archivio_pazienti/cartella_documenti.png' %}" alt="" width="20px" height="20px" alt=""></th>
                     <th><img src="{% static 'style/img/archivio_pazienti/accept.png' %}" alt="" width="20px" height="20px"></th>
                     <th><img src="{% static 'style/img/archivio_pazienti/tools.png' %}" alt="" width="20px" height="20px"></th>
-                </tr>
-                
-                
+                </tr>              
             </thead>
             <tbody id="tableBody">
                 <a href="" id="link">
@@ -54,10 +51,11 @@
         </table>
         
         <div class="Pagination">
-            <p>Precedente</p>
+            <button id="prevButton" onclick="goToPreviousPage()">Precendente</button>
             <ul class="pagination" id="pagination"></ul>
-            <p>Successivo</p>
+            <button id="nextButton" onclick="goToNextPage()">Successivo</button>
         </div>
+        
         
         <div id="myModal" class="modal">
             <div class="modal-content">
@@ -159,34 +157,69 @@
                 tableBody.appendChild(row);
             }
         }
-        //DIsplay Pagination
+        
+        //Display Pagination
         function displayPagination() {
             pagination.innerHTML = '';
-    
+
             const totalPages = Math.ceil(dataFromDjango.length / itemsPerPage);
-    
-            for (let i = 1; i <= totalPages; i++) {
+            const pagesToShow = 5; // Number of pages to display in the pagination bar
+
+            let startPage = Math.max(1, currentPage - Math.floor(pagesToShow / 2));
+            let endPage = Math.min(totalPages, startPage + pagesToShow - 1);
+
+            if (endPage - startPage + 1 < pagesToShow) {
+                startPage = Math.max(1, endPage - pagesToShow + 1);
+            }
+
+            for (let i = startPage; i <= endPage; i++) {
                 const li = document.createElement('li');
                 li.textContent = i;
-    
-                // Add the 'active' class to the active page
+
                 if (i === currentPage) {
                     li.classList.add('active');
                 }
-    
+
                 li.addEventListener('click', () => {
                     currentPage = i;
                     displayData();
                     displayPagination();
                 });
-    
+
                 pagination.appendChild(li);
             }
+
+            // Add "Previous" and "Next" buttons
+            if (currentPage > 1) {
+                const prevButton = createPaginationButton('Previous', currentPage - 1);
+                pagination.appendChild(prevButton);
+            }
+
+            if (currentPage < totalPages) {
+                const nextButton = createPaginationButton('Next', currentPage + 1);
+                pagination.appendChild(nextButton);
+            }
         }
-    
+        // Function for previous page
+        function goToPreviousPage() {
+            if (currentPage > 1) {
+                currentPage--;
+                displayData();
+                displayPagination();
+            }
+        }
+        //Function for next page
+        function goToNextPage() {
+            const totalPages = Math.ceil(dataFromDjango.length / itemsPerPage);
+            if (currentPage < totalPages) {
+                currentPage++;
+                displayData();
+                displayPagination();
+            }
+        }
+
         displayData();
         displayPagination();
-
 
         //Show Modal For Accettazione
         function openModal() {

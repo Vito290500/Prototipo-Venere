@@ -49,7 +49,7 @@
                 <div class="esami-header">
                     <p>ESAMI E ANALISI PAZIENTE</p>
                     <button class="add" onclick=openModalAdd()><img src="{% static 'style/img/cartella_paziente/add.png' %}" alt="" width="50px" height="50px"></button>
-                    <button class="send"><img src="{% static 'style/img/cartella_paziente/send.png' %}" alt="" width="50px" height="50px"></button>
+                    <button class="send" onclick=openModalSend()><img src="{% static 'style/img/cartella_paziente/send.png' %}" alt="" width="50px" height="50px"></button>
                 </div>
 
                 <div class="tab-esami">
@@ -69,7 +69,7 @@
             </div>
         </div>
 
-        <div id="ModalAdd" class="modal">
+        <div id="ModalAdd" class="modalAdd">
             <div class="modal-content">
 
                 <div class="Head-section">
@@ -114,21 +114,53 @@
             </div>
         </div>
 
+        <!-- Modal -->
+        <div id="ModalSend" class="modalSend">
+            <div class="headerSend">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <p>Procedere con l'invio di tutti i documenti al paziente?</h2>
+            </div>
+            <button onclick="confirmAction()">Yes</button>
+            <button onclick="closeModal()">No</button>
+        </div>
+        
+        <!-- Overlay background -->
+        <div id="overlay" class="overlay"></div>
 
+  
     </div>
 
     <script>
+        /* FUNCTION FOR MODAL 'ADD DOCUMENT'*/
         function openModalAdd() {
         document.getElementById('ModalAdd').style.display = 'block';
+        document.getElementById('overlay').style.display = 'block';
         }
 
         function closeModalAdd() {
             document.getElementById('ModalAdd').style.display = 'none';
+            document.getElementById('overlay').style.display = 'none';
         }
 
         function acceptEntry() {
             console.log('Entry accepted');
             closeModal(); 
+        }
+
+        /* FUNCTION FOR MODAL 'SEND DOCUMENT'*/
+        function openModalSend() {
+            document.getElementById('ModalSend').style.display = 'block';
+            document.getElementById('overlay').style.display = 'block';
+        }
+
+        function closeModal() {
+            document.getElementById('ModalSend').style.display = 'none';
+            document.getElementById('overlay').style.display = 'none';
+        }
+
+        function confirmAction() {
+            alert('Tutti i documenti sono stati inviati al paziente correttamente!');
+            closeModal();
         }
 
     </script>
