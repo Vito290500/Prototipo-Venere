@@ -105,3 +105,109 @@
     text-align: center;
     margin-top: 0rem;
 }
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    width: 80%;
+    max-width: 800px;
+    background-color: #fefefe;
+    padding: 20px;
+    border: 1px solid #888;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.close {
+    position: absolute;
+    top: 1rem;
+    right: 2rem;
+    cursor: pointer;
+    font-size: 30px;
+}
+.close:hover{
+    transform: scale(1.2);
+}
+.close:active{
+    color: #4CB9E7;
+}
+.Head-section h2{
+    margin-left: 5%;
+    color: #4CB9E7;
+}
+.AddDocumentoForm{
+    margin-top: 3rem;
+    width: 90%;
+    margin-left: 5%;
+}
+.AddDocumentoForm div{
+    display: flex;
+    margin-bottom: 1rem;
+}
+.AddDocumentoForm div p{
+    width: 40%;
+    font-size: 18px;
+}
+.AddDocumentoForm div input{
+    width: 60%;
+    font-size: 16px;
+    text-align: center;
+    border: 1px solid #4CB9E7;
+    outline: none;
+}
+.AddDocumentoForm div input:focus{
+    background-color: #aad4e6;
+}
+.UploadFile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    width: 50%;
+}
+.UploadFile label {
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+.UploadFile input[type="file"] {
+    padding: 10px;
+    border: 2px solid #4CB9E7;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #333;
+    font-size: 16px;
+    cursor: pointer;
+    outline: none;
+    width: 200px;
+}
+.UploadFile input[type="file"] + label {
+    padding: 10px 15px;
+    background-color: #4CB9E7;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.UploadFile input[type="file"] + label:hover {
+    background-color: #2980b9;
+}
+.Submitbtn{
+    width: 50%;
+}
+.Submitbtn input{
+    height: 40px;
+    font-size: 16px;
+    border-radius: 5px;
+    width: 60px;
+    margin-top: 3.2rem;
+}
+.Submitbtn input:hover{
+    background-color: #4CB9E7;
+    cursor: pointer;
+}
+.Submitbtn input:active{
+    background-color: #2980b9;
+}

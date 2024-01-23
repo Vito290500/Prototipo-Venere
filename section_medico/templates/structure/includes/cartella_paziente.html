@@ -48,7 +48,7 @@
             <div class="esami-paziente">
                 <div class="esami-header">
                     <p>ESAMI E ANALISI PAZIENTE</p>
-                    <button class="add"><img src="{% static 'style/img/cartella_paziente/add.png' %}" alt="" width="50px" height="50px"></button>
+                    <button class="add" onclick=openModalAdd()><img src="{% static 'style/img/cartella_paziente/add.png' %}" alt="" width="50px" height="50px"></button>
                     <button class="send"><img src="{% static 'style/img/cartella_paziente/send.png' %}" alt="" width="50px" height="50px"></button>
                 </div>
 
@@ -59,13 +59,78 @@
                         <p>Data Caricamento Documento</p>
                         <p>Data Invio Documento</p>
                     </div>
-                    {% for esami in esami_list %}
 
+                    {% for esami in esami_list %}
+                        <!-- IMPLEMENTARE QUESTA FUNZIONE CON IL DATABASE -->
                     {% endfor %}
+
                 </div>
                 
             </div>
         </div>
+
+        <div id="ModalAdd" class="modal">
+            <div class="modal-content">
+
+                <div class="Head-section">
+                    <h2>INSERISCI UN NUOVO DOCUMENTO</h2>
+                    <span class="close" onclick="closeModalAdd()">&times;</span>
+                </div>
+
+                <div class="form-input">
+                    <!--IMPLEMENT THE FORM FUNCTION WITH BACKEND-->
+                    <form action="" class="AddDocumentoForm">
+                        <div class="NomeEsame">
+                            <p>Nome Esame / Visita:</p>
+                            <input type="text" placeholder="Inserisci il nome dell'esame qui">
+                        </div>
+                        <div class="DataEsame">
+                            <p>Data Esame / Visita:</p>
+                            <input type="text" placeholder="Inserisci la data dell'esame qui">
+                        </div>
+                        <div class="DataCaricamentoDocumento">
+                            <p>Data Caricamento Documento:</p>
+                            <input type="text" placeholder="Inserisci la data qui">
+                        </div>
+                        <div class="DataInvioDocumento">
+                            <p>Data Invio Documento:</p>
+                            <input type="text" placeholder="Inserisci la data di invio documento">
+                        </div>
+
+                        <div class="UploadSubmit">
+                            <div class="UploadFile">
+                                <label for="fileUpload">Choose a file:</label>
+                                <input type="file" id="fileUpload" name="fileUpload">
+                            </div>
+                            
+                            <div class="Submitbtn">
+                                <input type="submit" value="Upload">
+                            </div>
+                        </div>
+                    </form>
+                    
+                </div>
+
+            </div>
+        </div>
+
+
     </div>
+
+    <script>
+        function openModalAdd() {
+        document.getElementById('ModalAdd').style.display = 'block';
+        }
+
+        function closeModalAdd() {
+            document.getElementById('ModalAdd').style.display = 'none';
+        }
+
+        function acceptEntry() {
+            console.log('Entry accepted');
+            closeModal(); 
+        }
+
+    </script>
 
 {% endblock %}
