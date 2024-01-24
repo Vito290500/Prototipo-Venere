@@ -58,8 +58,10 @@ def ArchivioPazienti(request):
     ]
 
     data = []
+    result = 0
 
     for count in range(0, len(name_example)):
+        result += 1
         data.append({
             'cognome': name_example[count] ,
             'nome': '',
@@ -70,10 +72,11 @@ def ArchivioPazienti(request):
             'Fine attività': '',
             'id': count
         })
-
+  
     data_json = json.dumps(data)
     return render(request, "structure/includes/archiviopazienti.html", {'data_json': data_json,
-                                                                        'esami': name_exam}, )
+                                                                        'esami': name_exam,
+                                                                        'result': result}, )
 
 
 def Cartella_Paziente(request):

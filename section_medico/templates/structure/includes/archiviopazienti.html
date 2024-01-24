@@ -49,14 +49,35 @@
                 </a>
             </tbody>
         </table>
+
+        <!--Add Function for change table layout-->
+        <div class="visualizza-elementi">
+            <div class="change-table-layout">
+                <p class="prev">Visualizza</p>
+                <select name="number-element" id="number-element" onchange="updateItemsPerPage()">
+                    <option value="5">5</option>
+                    <option value="10">10</option>
+                    <option value="50">50</option>
+                    <option value="100">100</option>
+                </select>
+                <p class="next">elementi</p>
+            </div>
+
+            <div class="numero-risultati">
+                <p>Risultati Ricerca:  {{ result }}</p>
+            </div>
+        </div>
+
+       
+
+
         
         <div class="Pagination">
-            <button id="prevButton" onclick="goToPreviousPage()">Precendente</button>
+            <button id="prevButton" class="prev" onclick="goToPreviousPage()">Precendente </button>
             <ul class="pagination" id="pagination"></ul>
-            <button id="nextButton" onclick="goToNextPage()">Successivo</button>
+            <button id="nextButton" class="next" onclick="goToNextPage()">Successivo </button>
         </div>
-        
-        
+
         <div id="myModal" class="modal">
             <div class="modal-content">
 
@@ -93,6 +114,9 @@
                 </div>
             </div>
         </div>
+
+        <div id="overlay" class="overlay"></div>
+
     </div>
 
 
@@ -103,7 +127,7 @@
         const dataFromDjango = {{data_json|safe}};
         console.log('Data from Django:', dataFromDjango);
     
-        const itemsPerPage = 10;
+        let itemsPerPage = 10;
         let currentPage = 1;
     
         const tableBody = document.getElementById('tableBody');
@@ -158,6 +182,13 @@
             }
         }
         
+        function updateItemsPerPage() {
+            const selectElement = document.getElementById('number-element');
+            itemsPerPage = parseInt(selectElement.value,10);
+            currentPage = 1; // Reset to the first page when items per page changes
+            displayData();
+        }
+
         //Display Pagination
         function displayPagination() {
             pagination.innerHTML = '';
@@ -220,14 +251,17 @@
 
         displayData();
         displayPagination();
+        updateItemsPerPage();
 
         //Show Modal For Accettazione
         function openModal() {
-        document.getElementById('myModal').style.display = 'block';
+            document.getElementById('myModal').style.display = 'block';
+            document.getElementById('overlay').style.display = 'block';
         }
 
         function closeModal() {
             document.getElementById('myModal').style.display = 'none';
+            document.getElementById('overlay').style.display = 'none';
         }
 
         function acceptEntry() {
