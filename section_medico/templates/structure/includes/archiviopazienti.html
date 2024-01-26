@@ -12,20 +12,27 @@
 {% block main-content-section %}
     
     <div class="main-content-section">
-        <div class="ricerca">
-            <div class="barra-container">
-                <input type="text" class="barra-ricerca-input" placeholder="Inserire alcune lettere del cognome o del nome del paziente">
-                <button>🔍</button>
-            </div>
-            <div class="filtri">
-                <select name="filtri-select" id="">
-                    <option value="1">Filtra</option>
-                    <option value="2">- Nome</option>
-                    <option value="3">+ Nome</option>
-                    <option value="4">- Data</option>
-                    <option value="5">+ Data</option>
-                </select>
-            </div>
+
+        <div class="header">
+            <h2>ARCHIVIO PAZIENTI</h2>
+        </div>
+
+        <div class="tools-bar">
+
+            <p id="ricerca">Ricerca: </p>
+            <input type="text" class="barra-ricerca-input" placeholder="Inserire alcune lettere del cognome o del nome del paziente">
+            <button>🔍</button>
+         
+
+            <p id="filtri">Filtri: </p>
+            <select name="filtri-select" id="">
+                <option value="1">None</option>
+                <option value="2">- Nome</option>
+                <option value="3">+ Nome</option>
+                <option value="4">- Data</option>
+                <option value="5">+ Data</option>
+            </select>
+         
         </div>
         
         <table id="myTable">

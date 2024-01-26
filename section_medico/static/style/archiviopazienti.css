@@ -8,60 +8,73 @@
     height: 100%;
     padding-bottom: 100px;
 }
-
 #archivio-pazienti-btn {
     background-color: #4CB9E7;
     width: 98%;
     border-radius: 5px 0px 0px 5px;
     color: white;
 }
-.ricerca {
+.header{
     background-color: lightgrey;
     height: 100px;
     display: flex;
 }
-.barra-container {
-    width: 72%;
-    margin-left: 8%;
+.header h2{
+    color: rgb(83, 83, 83);
+    margin-top: 2rem;
+    margin-left: 5rem;
 }
-.barra-ricerca-input {
-    border: 1px solid rgba(33, 33, 33, 0.4);
-    height: 40px;
-    border-radius: 5px;
-    margin-top: 30px;
-    font-size: 18px;
-    width: 85%;
+.tools-bar{
+    display: flex;
+    margin-top: 2rem;
+    width: 90%;
+    margin-left: 5%;
+    border: 1px solid rgb(198, 198, 198, 0.5);
+    height: 60px;
 }
-.barra-container button {
-    height: 44px;
+.tools-bar p{
+    margin: 1.3rem 1rem 1rem 1rem;
     width: 5%;
-    margin-top: 30px;
-    margin-left: -0.4rem;
 }
-.barra-container button:hover {
+.tools-bar input{
+    height: 36px;
+    margin-top: 10px;
+    width: 65%;
+    border: 1px solid #4CB9E7;
+    border-radius: 5px 0px 0px 5px;
+    font-size: 16px;
+}
+.tools-bar button{
+    height: 40px;
+    margin-top: 10px;
+    border-left: none;
+    width: 50px;
+    border-radius: 0px 5px 5px 0px;
+    border: 0.5px solid rgb(198, 198, 198, 0.5);
+}
+.tools-bar button:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+    border: 0.5px solid #4CB9E7;
+}
+.tools-bar select{
+    height: 40px;
+    margin-top: 10px;
+    width: 15%;
+    font-size: 16px;
+    text-align: center;
+    border: 1px solid #4CB9E7;
+    border-radius: 5px;
+}
+.tools-bar select:hover{
     cursor: pointer;
 }
-.barra-ricerca-input:active {
-    outline: none;
-}
-.filtri {
-    margin-top: 30px;
-    width: 15%;
-    display: flex;
-    flex-direction: row;
-}
-.filtri select {
-    height: 40px;
-    width: 80%;
-    border-radius: 5px;
-    text-align: center;
-    font-size: 18px;
-}
+
 #myTable {
     width: 90%;
     height: 500px;
-    margin: 5% 5% 5% 5%;
-    border: 1px solid rgba(33, 33, 33, 0.4);
+    margin: 3% 5% 5% 5%;
+    border: 1px solid rgb(198, 198, 198, 0.5);
 }
 #myTable thead {
     background-color: #4CB9E7;
