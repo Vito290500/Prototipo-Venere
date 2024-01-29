@@ -2,6 +2,9 @@ import json
 from django.shortcuts import render
 from django.views import View
 
+from . import views
+from .models import Prenotazioni
+
 class LoginMedico(View):
     def get(self, request):
         return render(request, "structure/login_medico.html")
@@ -36,7 +39,6 @@ def NuovoAssistito(request):
     return render(request, "structure/includes/nuovoassistito.html", {
         "province" : elenco_provincie
     })
-
 
 def ArchivioPazienti(request):
 
@@ -78,7 +80,6 @@ def ArchivioPazienti(request):
                                                                         'esami': name_exam,
                                                                         'result': result}, )
 
-
 def Cartella_Paziente(request):
 
     #IMPLEMENT THIS WITH BACKEND
@@ -102,8 +103,24 @@ def Cartella_Paziente(request):
     })
 
 
+
+
+
 def Calendario_Prenotazioni(request):
+
+    
+
+
+
     return render(request, "structure/includes/calendario_prenotazioni.html")
+
+
+
+
+
+
+
+
 
 def Elenco_Referti(request):
     return render(request, "structure/includes/elenco_referti.html")

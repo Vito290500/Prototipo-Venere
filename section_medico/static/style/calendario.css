@@ -23,13 +23,6 @@
     margin-top: 2rem;
     margin-left: 5rem;
 }
-
-
-
-
-
-
-
 .Calendario-tools{
     display: flex;
     width: 90%;
@@ -59,23 +52,31 @@
 }
 #calendarFieldContainer input{
     height: 36px;
+    border: 1px solid #4CB9E7;
+    border-radius: 5px;
 }
 .ricerca{
     height: 36px;
     margin-top: 10px;
     width: 300px;
     width: 36%;
+    border: 1px solid #4CB9E7;
+    border-radius: 5px 0px 0px 5px;
 }
 .ricerca-btn{
-    height: 42px;
+    height: 40px;
     margin-top: 10px;
     width: 50px;
+    border-radius: 0px 5px 5px 0px;
+    border: 0.5px solid rgb(198, 198, 198, 0.5);
 }
 .ricerca-btn:hover{
     cursor: pointer;
+    transform: scale(1.1);
 }
 #filtro{
     margin-right: -0.5rem;
 }
+
 
 
