@@ -102,26 +102,29 @@ def Cartella_Paziente(request):
         'data': data
     })
 
-
-
-
-
 def Calendario_Prenotazioni(request):
+
+    prenotazioni = Prenotazioni.objects.all()
+    
+    numero_giorni = ['29','30','31']
+
+    for i in range(1, 30):
+        if i <= 9:
+            numero_giorni.append(f'0{i}')
+        else: 
+            numero_giorni.append(f'{i}')
 
     
 
-
-
-    return render(request, "structure/includes/calendario_prenotazioni.html")
-
-
-
+    return render(request, "structure/includes/calendario_prenotazioni.html",{
+                  "Prenotazioni": prenotazioni,
+                  "num_giorni": numero_giorni})
 
 
 
 
 
-
+#Coming soon
 def Elenco_Referti(request):
     return render(request, "structure/includes/elenco_referti.html")
 

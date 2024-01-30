@@ -78,5 +78,34 @@
     margin-right: -0.5rem;
 }
 
+.Tabella-Calendario{
+    width: 90%;
+    margin-top: 2rem;
+    margin-left: 5%;
+    border: 1px solid rgb(198, 198, 198, 0.5);
+    height: 50px;
+}
+.tabella-header tr{
+    background-color: #f2f2f2;
+}
+.tabella-header tr th{
+    width: 12.85%;
+    border-right: 1px solid rgb(198, 198, 198, 0.5);
+}
+
+
+.Calendario {
+    width: 90%;  
+    margin-left: 5%;
+    border-collapse: collapse;
+}
+.Calendario-content tr {
+    height: 60px;
+}
+.Calendario-content td {
+    width: 14.28%;
+    border: 1px solid #ddd;
+    text-align: center;
+}
 
 
