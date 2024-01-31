@@ -114,8 +114,6 @@ def Calendario_Prenotazioni(request):
         else: 
             numero_giorni.append(f'{i}')
 
-    
-
     return render(request, "structure/includes/calendario_prenotazioni.html",{
                   "Prenotazioni": prenotazioni,
                   "num_giorni": numero_giorni})
