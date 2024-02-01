@@ -73,10 +73,12 @@
                         </tr><tr>
                     {% endif %}
                     <td class="cella">
-                        <a href="" class="link-day">
+                        <a href="#" class="link-day" onclick="openModal(event, {{i}})"> <!--@TS ignore-->
+                            
                             <p class="numero-data">{{ i }}</p>
                             {% for j in Prenotazioni %}
-                                {% if i == j.data %}
+                                {% if i == j.data %}    
+                                    
                                     <div class="prenotazione">
                                         <p>{{ j.nome_prenotazione }}</p>
                                         <p>{{ j.orario_prenotazione }}</p>
@@ -88,8 +90,26 @@
                 {% endfor %}
             </tbody>
         </table>
+
+        <div class="modal" id="myModal">
+            <p id="modalParagraph"></p>
+        
+            {% for j in Prenotazioni %}
+                <div class="prenotazione" data-data="{{ j.data }}">
+                    <p>{{ j.nome_prenotazione }}</p>
+                    <p>{{ j.orario_prenotazione }}</p>
+                </div>
+            {% endfor %}
+        
+            <span class="close" onclick="closeModal()">&times;</span>
+        </div>
+        
+        <div id="overlay" class="overlay"></div>
+
     </div>
 
+
     <script src="{% static 'style/js/calendario/scriptArchivioPazienti.js' %}" defer></script>
+    <script src="{% static 'style/js/calendario/scriptShowPrenotazioni.js' %}" defer></script>
 
 {% endblock %}

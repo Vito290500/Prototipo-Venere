@@ -11,3 +11,4 @@ urlpatterns = [
     path("Sincronizzazione", views.Sincronizzazione, name="sincronizzazione"),
     path("Cartella Paziente", views.Cartella_Paziente, name="cartella-paziente"),
 ] 
+

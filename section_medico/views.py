@@ -1,6 +1,8 @@
 import json
 from django.shortcuts import render
 from django.views import View
+from django.http import JsonResponse
+from django.shortcuts import get_object_or_404
 
 from . import views
 from .models import Prenotazioni
@@ -117,8 +119,6 @@ def Calendario_Prenotazioni(request):
     return render(request, "structure/includes/calendario_prenotazioni.html",{
                   "Prenotazioni": prenotazioni,
                   "num_giorni": numero_giorni})
-
-
 
 
 
