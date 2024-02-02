@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Home Page{% endblock %}</title>
-    <link rel="stylesheet" href="{% static 'style/homePageMedico.css' %}">
+    <link rel="stylesheet" href="{% static 'style/css/homePageMedico.css' %}">
    
     <!--JQuery script-->
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
@@ -50,9 +50,9 @@
                 <img src="{% static 'style/img/homepage/calendario.png' %}" alt="">
                 <p>Calendario Prenotazioni</p>
             </a>
-            <a href="" id="sincronizzazione-btn">
-                <img src="{% static 'style/img/homepage/sincronizzazione.png' %}" alt="">
-                <p>Sincronizzazione(c. soon..)</p>
+            <a href="{% url 'longevity' %}" id="longevity-btn">
+                <img src="{% static 'style/img/longevity/longevity.png' %}" alt="" width="60px" height="60px">
+                <p>Longevity</p>
             </a>
             
         </div>

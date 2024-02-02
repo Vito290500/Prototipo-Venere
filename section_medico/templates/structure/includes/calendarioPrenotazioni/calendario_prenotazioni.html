@@ -6,7 +6,7 @@
 {% endblock %}
 
 {% block css %}
-    <link rel="stylesheet" href="{% static 'style/calendario.css' %}">
+    <link rel="stylesheet" href="{% static 'style/css/calendarioPrenotazioni/calendario.css' %}">
 {% endblock %}
 
 {% block main-content-section %}
@@ -69,47 +69,38 @@
         <table class="Calendario-body">
             <tbody id="tableBody" class="Calendario-content">
                 {% for i in num_giorni %}
+
                     {% if forloop.counter0|divisibleby:7 %}
                         </tr><tr>
                     {% endif %}
+
+
                     <td class="cella">
-                        <a href="#" class="link-day" onclick="openModal(event, {{i}})"> <!--@TS ignore-->
+                        <a href="#" class="link-day">
                             
                             <p class="numero-data">{{ i }}</p>
+
                             {% for j in Prenotazioni %}
+
                                 {% if i == j.data %}    
-                                    
                                     <div class="prenotazione">
                                         <p>{{ j.nome_prenotazione }}</p>
                                         <p>{{ j.orario_prenotazione }}</p>
                                     </div>
                                 {% endif %}
+
                             {% endfor %}
+                        
                         </a>
                     </td>
+
                 {% endfor %}
             </tbody>
         </table>
 
-        <div class="modal" id="myModal">
-            <p id="modalParagraph"></p>
-        
-            {% for j in Prenotazioni %}
-                <div class="prenotazione" data-data="{{ j.data }}">
-                    <p>{{ j.nome_prenotazione }}</p>
-                    <p>{{ j.orario_prenotazione }}</p>
-                </div>
-            {% endfor %}
-        
-            <span class="close" onclick="closeModal()">&times;</span>
-        </div>
-        
-        <div id="overlay" class="overlay"></div>
-
     </div>
 
-
-    <script src="{% static 'style/js/calendario/scriptArchivioPazienti.js' %}" defer></script>
-    <script src="{% static 'style/js/calendario/scriptShowPrenotazioni.js' %}" defer></script>
+    
+    <script src="{% static 'style/js/calendario/scriptCalendario.js' %}" defer></script>
 
 {% endblock %}

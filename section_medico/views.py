@@ -38,7 +38,7 @@ def NuovoAssistito(request):
         "Varese,VA", "Venezia,VE", "Verbano-Cusio-Ossola,VB", "Vercelli,VC",
         "Verona,VR", "Vibo Valentia,VV", "Vicenza,VI", "Viterbo,VT"
     ]
-    return render(request, "structure/includes/nuovoassistito.html", {
+    return render(request, "structure/includes/nuovoAssistito/nuovoassistito.html", {
         "province" : elenco_provincie
     })
 
@@ -78,9 +78,10 @@ def ArchivioPazienti(request):
         })
   
     data_json = json.dumps(data)
-    return render(request, "structure/includes/archiviopazienti.html", {'data_json': data_json,
-                                                                        'esami': name_exam,
-                                                                        'result': result}, )
+    return render(request, "structure/includes/archivioPazienti/archiviopazienti.html",
+                   {'data_json': data_json,
+                    'esami': name_exam,
+                    'result': result}, )
 
 def Cartella_Paziente(request):
 
@@ -100,7 +101,7 @@ def Cartella_Paziente(request):
 
     data = name_example[int(patient_id)]
 
-    return render(request, "structure/includes/cartella_paziente.html",{
+    return render(request, "structure/includes/archivioPazienti/cartella_paziente.html",{
         'data': data
     })
 
@@ -116,18 +117,13 @@ def Calendario_Prenotazioni(request):
         else: 
             numero_giorni.append(f'{i}')
 
-    return render(request, "structure/includes/calendario_prenotazioni.html",{
+    return render(request, "structure/includes/calendarioPrenotazioni/calendario_prenotazioni.html",{
                   "Prenotazioni": prenotazioni,
                   "num_giorni": numero_giorni})
 
 
 
-#Coming soon
-def Elenco_Referti(request):
-    return render(request, "structure/includes/elenco_referti.html")
+def Longevity(request):
+    return render(request, "structure/includes/longevity/longevityHome.html")
 
-def Tabella_Analisi(request):
-    return render(request, "structure/includes/tabella_analisi.html")
 
-def Sincronizzazione(request):
-    return render(request, "structure/includes/sincronizzazione.html")
