@@ -9,33 +9,64 @@
     <link rel="stylesheet" href="{% static 'style/website_starting_page.css' %}">
 </head>
 <body>
-    <div class="header-section">
-        <h2>Website Starting Page - Venere Website</h2>
-    </div>
-
     <div class="background-image">
     </div>
 
-    <div class="main-section">
-        <div class="title-section">
-            <h3>AREA DI ACCESSO ALLA PIATTAFORMA</h3>
-        </div>
+    <div class="Presentation">
+        <h2 class="fade-in">BENVENUTO NELLA PIATTAFORMA VENERE</h2>
+        <p class="fade-in">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+            Reiciendis dicta et repellat reprehenderit dolor labore
+            obcaecati est vitae mollitia culpa pariatur aspernatur,
+            sint error ducimus facere cum. Quas, soluta quaerat.
+        </p>
 
-        <div class="content-button">
-            <button class="paziente-section">
-                <a href="">
+    </div>
+
+    <a href="#main-section" class="scroll-indicator">
+        <div class="arrow"></div>
+        <p class="arrow-text">Area Accesso</p>
+    </a>
+    
+
+    <div id="main-section" class="background2-image">
+   
+        <div class="main-section">
+            
+            <div class="content-button">
+                <div class="title-section">
+                    <h3>AREA DI ACCESSO ALLA PIATTAFORMA</h3>
+                </div>
+
+                <button class="paziente-section">
+                    <a href="">
                     <img src="{% static 'style/img/paziente.png' %}" alt="">
                     <p>PAZIENTE</p>
-                </a>
-            </button>
-        
-            <button class="medico-section">
-                <a href="{% url 'login-medico' %}">
+                    </a>
+                </button>
+            
+                <button class="medico-section">
+                    <a href="{% url 'login-medico' %}">
                     <img src="{% static 'style/img/medico.png' %}" alt="">
                     <p>MEDICO</p>
-                </a>
-            </button>
+                    </a>
+                </button>
+            </div>
         </div>
+
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+          document.querySelector('.scroll-indicator').addEventListener('click', function (event) {
+            event.preventDefault();
+    
+            const mainSection = document.getElementById('main-section');
+            if (mainSection) {
+              mainSection.scrollIntoView({ behavior: 'smooth' });
+            }
+          });
+        });
+      </script>
 </body>
 </html>
