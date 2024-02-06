@@ -12,48 +12,38 @@
     <div class="background-image">
     </div>
 
-    <div class="Presentation">
-        <h2 class="fade-in">BENVENUTO NELLA PIATTAFORMA VENERE</h2>
-        <p class="fade-in">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-            Reiciendis dicta et repellat reprehenderit dolor labore
-            obcaecati est vitae mollitia culpa pariatur aspernatur,
-            sint error ducimus facere cum. Quas, soluta quaerat.
-        </p>
 
-    </div>
+    <div class="main-section">      
+        <div class="content-button">
 
-    <a href="#main-section" class="scroll-indicator">
-        <div class="arrow"></div>
-        <p class="arrow-text">Area Accesso</p>
-    </a>
-    
+            <div class="Presentation">
+                <h2 class="fade-in">BENVENUTO NELLA PIATTAFORMA VENERE</h2>
+                <p class="fade-in">
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                    Reiciendis dicta et repellat reprehenderit dolor labore
+                    obcaecati est vitae mollitia culpa pariatur aspernatur,
+                    sint error ducimus facere cum. Quas, soluta quaerat.
+                </p>
+            </div>
 
-    <div id="main-section" class="background2-image">
-   
-        <div class="main-section">
-            
-            <div class="content-button">
-                <div class="title-section">
+            <div class="title-section fade-in">
                     <h3>AREA DI ACCESSO ALLA PIATTAFORMA</h3>
-                </div>
+            </div>
 
-                <button class="paziente-section">
+            <button class="paziente-section fade-in">
                     <a href="">
                     <img src="{% static 'style/img/paziente.png' %}" alt="">
                     <p>PAZIENTE</p>
                     </a>
-                </button>
+            </button>
             
-                <button class="medico-section">
+            <button class="medico-section fade-in">
                     <a href="{% url 'login-medico' %}">
                     <img src="{% static 'style/img/medico.png' %}" alt="">
                     <p>MEDICO</p>
                     </a>
-                </button>
-            </div>
+            </button>
         </div>
-
     </div>
 
     <script>
@@ -67,6 +57,7 @@
             }
           });
         });
-      </script>
+    </script>
+
 </body>
 </html>

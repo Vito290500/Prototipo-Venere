@@ -59,8 +59,39 @@
             
 
         {% block main-content-section %}
-            <div class="Home">
-                <h1>Benvenuto nella sezione Home page, dott.</h1>
+
+            <div class="content-section">
+                <div class="benvenuto">
+                    <p class="title">BENVENUTO NELLA PIATTAFORMA VENERE</p>
+                    <div class="comunicazioni">
+                        <div class="comunicazioni-header">
+                            <img src="{% static 'style/img/homepage/megafono.png' %}" alt="">
+                            <p>COMUNICAZIONI PIATTAFORMA</p>
+                        </div>
+                        <p class="content-comunicazioni">
+                            Ci sarà una manutenzione
+                            alla piattaforma in data 03/05/2024 
+                            alle ore 11:00 e durerà circa 2 ore.
+                        </p>
+                    </div>
+                    <div class="Versione">
+                        <p>Versione Piattaforma: 1.0</p>
+                        <p>Ultimo aggiornamento: 06/02/2024</p>
+                    </div>
+                    
+                </div>
+                    
+                <div class="new-features">
+                    <p>Versione 1.0</p>
+                    <p>lista funzionalità aggiunte</p>
+                </div>
+
+                <div class="news">
+                    <p>Notizie</p>
+                </div>
+
+                
+                
             </div>
         {% endblock %}
     </div>

@@ -9,18 +9,15 @@
     <link rel="stylesheet" href="{% static 'style/css/login_medico.css' %}">
 </head>
 <body>  
-    <nav class="nav-bar">   
-        <a class="back" href="{% url 'home-page' %}">⬅️</a>
-        <a href="" class="nav-title">Area Accesso Medico - Venere</a>
-    </nav>
-
     <div class="background-image">
     </div>
+
+    <a class="back" href="{% url 'home-page' %}"><img src="{% static 'style/img/back.png' %}" alt=""></a>
 
     <div class="login-section">
             <form action="{% url 'login-medico' %}" method="POST">
                 {% csrf_token %}
-                <h1>Login</h1>
+                <h2>LOGIN MEDICO</h2>
                 <div class="username">
                     <div class="username-image">
                         <img src="https://icones.pro/wp-content/uploads/2021/02/icone-utilisateur-gris.png" alt="" width="40px" height="40px">

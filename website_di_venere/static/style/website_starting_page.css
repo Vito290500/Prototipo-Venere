@@ -1,7 +1,7 @@
 html, body {
     margin: 0;
     padding: 0;
-    height: 1700px;
+    height: 100%;
     overflow-x: hidden;
 }
 .background-image {
@@ -15,43 +15,6 @@ html, body {
     top: -0.1rem;
     left: -0.1rem;
     filter: blur(2px); 
-}
-.Presentation{
-    transform: translate(50%,200%);
-}
-.Presentation h2{
-    color: #cacaca; 
-    font-family: 'Arial', sans-serif; 
-    font-size: 30px; 
-    font-weight: bold; 
-    letter-spacing: 1px; 
-    margin-bottom: 10px; 
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-}
-.Presentation p{
-    width: 30%;
-    color: #ffffff; 
-    font-family: 'Helvetica', sans-serif; 
-    font-size: 20px; 
-    line-height: 1.5;
-    margin-bottom: 15px; 
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-}
-/* Presentation Animation */
-.fade-in {
-    opacity: 0;
-    animation: fadeIn 1s ease-in-out forwards;
-}
-@keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-} 
-.fade-in:nth-child(2) {
-    animation-delay: 0.5s; 
 }
 
 
@@ -70,67 +33,98 @@ html, body {
     background-color: #555; 
 }
 
-/* Scroll indicator style */
-.scroll-indicator {
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    text-align: center;
-    display: flex;
-    text-decoration: none;
-}
-.scroll-indicator:hover .arrow-text,
-.scroll-indicator:hover .arrow{
-    transform: scale(1.4);
-    color: #abe6ff;
-}
-.arrow {
-    width: 0;
-    height: 0;
-    border-left: 10px solid transparent;
-    border-right: 10px solid transparent;
-    border-top: 15px solid #fff;
-    margin-top: 5px;
-}
-.arrow-text{
-    color: #fff;
-    font-size: 20px;
-    margin-left: 1.5rem;
-    margin-top: 0rem;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-}
-
-
 
 /* Main Section Style */
-.background2-image{
-    overflow:hidden;
-    background-color: #8ac8e3;
-    position: absolute;
-    top: 100%;
-    width: 100%;
-    height: 920px;
-    background-image: url("https://www.uq.edu.au/news/filething/get-styled/large/141199/EIAT%20medical%20hub.jpg?itok=7Cl9NwZ3");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
 .main-section{
-    width: 100%;
-    margin-top: -1.25rem;
-    height: 100%;
+    height: 50%;
+    width: 50%;
+    position: absolute;
+    top: 20%;
+    left: 30%;
+    transform: translate(30%, 20%);
 }
-.title-section h3{
-    color: white;
-    text-align: center;
-    font-size: 25px;
+.Presentation h2{
+    color: #cacaca; 
+    font-family: 'Arial', sans-serif; 
+    font-size: 30px; 
+    font-weight: bold; 
+    letter-spacing: 1px; 
+    margin-bottom: 10px; 
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    transform: translate(0%, 80%);
 }
-.content-button{
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.1);
-    height: 100%;
-    margin-top: -2rem;
+.Presentation p{
+    width: 80%;
+    color: #ffffff; 
+    font-family: 'Helvetica', sans-serif; 
+    font-size: 20px; 
+    line-height: 1.5;
+    margin-bottom: 15px; 
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
+
+/* Presentation Animation */
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 1s ease-in-out forwards;
+}
+@keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+} 
+.fade-in:nth-child(2) {
+    animation-delay: 0.5s; 
+}
+.fade-in:nth-child(3) {
+    animation-delay: 0.8s; 
+}
+.fade-in:nth-child(4) {
+    animation-delay: 0.8s; 
+}
+
+
+.title-section{
+    color: #cacaca;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    margin-top: 2rem;    
+}
+.content-button > :nth-child(4) {
+    margin-left: 10px; 
+}
+.content-button button {
+    width: 120px; 
+    height: 120px;
+    background-color: white;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 1px 2px 1px 2px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+.content-button button:hover {
+    cursor: pointer;
+    transform: scale(1.2);
+    background-color: #041760;
+}
+.content-button button p {
+    color: #3559E0;
+    font-weight: bold;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.content-button button img {
+    width: 80px;
+}
+.content-button button a {
+    text-decoration: none;
+}
+
+/*Media Query for all smartphone screen dimension*/
+@media only screen and (max-width: 900px){
+}
+/*Media Query for all smartphone screen rotation dimension*/
+@media only screen and (max-height: 600px){ 
+}
+

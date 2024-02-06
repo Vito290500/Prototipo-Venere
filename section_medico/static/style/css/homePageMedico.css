@@ -17,6 +17,8 @@ body{
     position: absolute;
     left: 2rem;
 }
+
+/* Left side Section Style */
 .main-section{
     display: flex;
     position: absolute;
@@ -51,7 +53,6 @@ body{
     background-color: #4CB9E7;
     color: white;
 }
-
 .other{
     display: flex;
     position: absolute;
@@ -71,12 +72,78 @@ body{
     margin-top: 0rem;
     text-align: center;
 }
-
 .other a:hover{
     cursor: pointer;
     background-color: #4CB9E7;
     
 }
+
+
+/* Main Content Section Style */
+.section{
+    width: 78%;
+    background-color: white;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    border-radius: 0px 5px 5px 5px;
+    box-shadow: 1px 2px 15px 10px rgba(57, 57, 57, 0.2);
+}
+
+.content-section{
+    display: inline-block;
+    width: 78%;
+}
+.benvenuto{
+    height: 250px;
+    border-radius: 2px;
+    background-color: white;
+    box-shadow: 1px 2px 15px 10px rgba(57, 57, 57, 0.2);
+    text-align: center;
+    margin-top: 2.1rem;
+}
+.title{
+    color: rgb(83, 83, 83);
+    font-size: 25px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    transform: translate(0%, 50%);
+}
+.comunicazioni{
+    width: 80%;
+    margin-left: 10%;
+    background-color: rgba(111, 9, 0, 0.2);
+    border: 1px solid rgb(255, 0, 0);
+}
+.comunicazioni-header{
+    display: flex;
+    width: 40%;
+    margin-left: 30%;
+    margin-top: 1rem;
+}
+.comunicazioni-header img{
+    margin-right: 2rem;
+}
+.comunicazioni-header p{
+    color: red;
+}
+.content-comunicazioni{
+    font-size: 20px;
+    width: 50%;
+    margin-left: 22%;
+}
+
+
+
+.Versione{
+    display: flex;
+}
+
+
+
+
+
+
+
+
 
 
 
