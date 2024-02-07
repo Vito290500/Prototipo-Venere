@@ -14,6 +14,9 @@ class LoginMedico(View):
     def post(self, request):
         return render(request, "structure/HomePageMedico.html")
 
+def HomePageRendering(request):
+    return render(request, "structure/HomePageMedico.html")
+
 def NuovoAssistito(request):
 
     elenco_provincie = [

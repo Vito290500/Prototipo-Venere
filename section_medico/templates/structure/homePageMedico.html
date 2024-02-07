@@ -19,8 +19,12 @@
     <div class="header-section">
         <h2>LOGO E NOME</h2>
         <div class="other">
-            <a href="" id="esci-btn">
-                <img src="{% static 'style/img/homepage/logout.png' %}" alt="" width="40px" height="30px">
+            <a href="{% url 'home-page' %}">
+                <img src="{% static 'style/img/homepage/home.png' %}" alt="" width="40px" height="40px">
+                <p>home</p>
+            </a>
+            <a href="{% url 'login-medico' %}" id="esci-btn">
+                <img src="{% static 'style/img/homepage/logout.png' %}" alt="" width="40px" height="40px">
                 <p>esci</p>
             </a>
         </div>
@@ -80,18 +84,49 @@
                     </div>
                     
                 </div>
+                
+                <div class="news-plattform">
+                    <div class="new-features">
+                        <div class="last-update">
+                            <p class="title">NOVITA' ULTIMO AGGIORNAMENTO</p> 
+                            <p class="sottotitolo">Ultima Versione: 1.0 (Beta version)</p>
+                            <ul class="funzionalità">
+                                <p class="ul-title">FUNZIONALITA':</p>
+                                <li>Aggiunta sezione 'Nuovo assistito'</li>
+                                <li>Aggiunta sezione 'Archivio Pazienti'</li>
+                                <li>(Archivio Pazienti) Aggiunta sezione 'Accettazione'</li>
+                                <li>(Archivio Pazienti) Aggiunta sezione 'Cartella Paziente'</li>
+                                <li>Aggiunta Sezione 'Calendario Prenotazioni'</li>
+                                <li>Aggiunta Sezione 'Home Page'</li>
+                            </ul>
+                            <ul class="bug">
+                                <p class="ul-title">BUG E FIX:</p>
+                                <li>Miglioramenti stabilità piattaforma</li>
+                                <li>Fixati errori grafici</li>
+                                <li>Fixati erorri sulle immagini di sfondo</li>
+                            </ul>
+
+                        </div>
+                        
+                        <div class="longevity-update">
+                            <p class="title">LONGEVITY UPDATE</p>
+                                <ul>
+                                    <p>FUNZIONALITA':</p>
+                                    <li>Aggiunta sezione longevity alla piattaforma</li>
+                                    <li>Aggiunta animazione nella home longevity</li>
+                                    <p>BUG E FIX:</p>
+                                    <li>migliorata la stabilità della piattaforma</li>
+                                </ul>
+                        </div>
+                    </div>
                     
-                <div class="new-features">
-                    <p>Versione 1.0</p>
-                    <p>lista funzionalità aggiunte</p>
-                </div>
 
-                <div class="news">
-                    <p>Notizie</p>
-                </div>
+                    <div class="news">
+                        <p class="title">NOTIZIE RECENTI</p>
 
-                
-                
+                        
+                    </div>
+                </div>
             </div>
         {% endblock %}
     </div>
