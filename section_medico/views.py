@@ -6,9 +6,7 @@ from django.shortcuts import get_object_or_404
 import requests
 
 from . import views
-from .models import Prenotazioni, ApiKeys, News
-
-
+from .models import Prenotazioni, ApiKeys
 
 
 class LoginMedico(View):
@@ -38,8 +36,6 @@ class LoginMedico(View):
             print(f"Error: {response.status_code}")
             return render(request, "structure/HomePageMedico.html")
 
-
-
 def HomePageRendering(request):
     api_key_instance = ApiKeys.objects.get(id=1)
     api_key = api_key_instance.ApiKeys
@@ -62,9 +58,7 @@ def HomePageRendering(request):
         print(f"Error: {response.status_code}")
         return render(request, "structure/HomePageMedico.html")
 
-
 def NuovoAssistito(request):
-
     elenco_provincie = [
         'Agrigento, AG', 'Alessandria, AL', 'Ancona, AN', 'Aosta/Aoste, AO'
         'Arezzo, AR' , 'Ascoli Piceno, AP',	 'Asti,	AT', 'Avellino,	AV', 'Bari,	BA',
@@ -92,7 +86,6 @@ def NuovoAssistito(request):
     })
 
 def ArchivioPazienti(request):
-
     #IMPLEMENT THIS WITH BACKEND
     name_exam = ['Breath Test Helicobacter Pylori', 'Breath Test Lattosio', 'Breath Test Lattosio',
                  'Check Up Routine', 'Check Up Tiroide Base', 'Check Up Tiroide Avamzato', 
@@ -169,8 +162,6 @@ def Calendario_Prenotazioni(request):
     return render(request, "structure/includes/calendarioPrenotazioni/calendario_prenotazioni.html",{
                   "Prenotazioni": prenotazioni,
                   "num_giorni": numero_giorni})
-
-
 
 def Longevity(request):
     return render(request, "structure/includes/longevity/longevityHome.html")

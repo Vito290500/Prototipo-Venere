@@ -44,12 +44,16 @@
             </a>
             <a href="" id="elenco-referto-btn">
                 <img src="{% static 'style/img/homepage/pdf.png' %}" alt="">
-                <p>Elenco Referti(c. soon..)</p>
+                <p>Elenco Referti (Coming soon)</p>
+                
             </a>
+
             <a href="" id="tabella-analisi-btn">
                 <img src="{% static 'style/img/homepage/analisibtn.png' %}" alt="">
-                <p>Tabella Analisi(c. soon..)</p>
+                <p>Tabella Analisi (Coming soon)</p>
+                
             </a>
+
             <a href="{% url 'calendario-prenotazioni' %}" id="calendario-btn">
                 <img src="{% static 'style/img/homepage/calendario.png' %}" alt="">
                 <p>Calendario Prenotazioni</p>
@@ -141,28 +145,5 @@
         {% endblock %}
     </div>
 
-    <!--Script for adatpe the left-side-btn text for small screen-->
-
-    <script>
-        $(document).ready(function () {
-          function truncateText(elementId) {
-            var screenWidth = $(window).width();
-            var maxLength = screenWidth < 600 ? 10 : 15; 
-    
-            $('#' + elementId + ' p').each(function () {
-              var text = $(this).text();
-              if (text.length > maxLength) {
-                $(this).text(text.substring(0, maxLength) + '...');
-              }
-            });
-          }
-          truncateText('sincronizzazione-btn');
-          truncateText('configurazione-btn');
-          $(window).resize(function () {
-            truncateText('sincronizzazione-btn');
-            truncateText('configurazione-btn');
-          });
-        });
-    </script>
 </body>
 </html>
