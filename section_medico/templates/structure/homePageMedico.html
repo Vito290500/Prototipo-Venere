@@ -124,7 +124,17 @@
                     <div class="news">
                         <p class="title">NOTIZIE RECENTI</p>
 
-                        
+                        <div class="news-container">
+                            <div class="news-content">
+                                {% for data in news_data %}
+                                    <div class="news-item"><a  href="{{ data.url }}" class="news-url">
+                                        <p class="news-title">{{ data.title }}</p>
+                                        <p class="news-content">{{ data.description }}</p>
+                                    </a></div>
+                                {% endfor %}
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div>

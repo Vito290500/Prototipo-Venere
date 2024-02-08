@@ -3,19 +3,65 @@ from django.shortcuts import render
 from django.views import View
 from django.http import JsonResponse
 from django.shortcuts import get_object_or_404
+import requests
 
 from . import views
-from .models import Prenotazioni
+from .models import Prenotazioni, ApiKeys, News
+
+
+
 
 class LoginMedico(View):
     def get(self, request):
         return render(request, "structure/login_medico.html")
     
     def post(self, request):
-        return render(request, "structure/HomePageMedico.html")
+
+        api_key_instance = ApiKeys.objects.get(id=1)
+        api_key = api_key_instance.ApiKeys
+
+        url_api_instance = ApiKeys.objects.get(id=1)
+        news_api_url = url_api_instance.Api
+
+        params = {
+            'apiKey': api_key,  
+        }
+
+        response = requests.get(news_api_url, params=params)
+
+        if response.status_code == 200:
+            news_data = response.json().get('articles', [])
+
+            return render(request, "structure/HomePageMedico.html", {'news_data': news_data})
+
+        else:
+            print(f"Error: {response.status_code}")
+            return render(request, "structure/HomePageMedico.html")
+
+
 
 def HomePageRendering(request):
-    return render(request, "structure/HomePageMedico.html")
+    api_key_instance = ApiKeys.objects.get(id=1)
+    api_key = api_key_instance.ApiKeys
+
+    url_api_instance = ApiKeys.objects.get(id=1)
+    news_api_url = url_api_instance.Api
+
+    params = {
+        'apiKey': api_key,  
+    }
+
+    response = requests.get(news_api_url, params=params)
+
+    if response.status_code == 200:
+        news_data = response.json().get('articles', [])
+
+        return render(request, "structure/HomePageMedico.html", {'news_data': news_data})
+
+    else:
+        print(f"Error: {response.status_code}")
+        return render(request, "structure/HomePageMedico.html")
+
 
 def NuovoAssistito(request):
 
