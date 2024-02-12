@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'section_paziente',
     'section_medico',
     'website_di_venere',
     'django.contrib.admin',

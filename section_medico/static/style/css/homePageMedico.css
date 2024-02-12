@@ -83,6 +83,7 @@ body{
 .content-section{
     display: inline-block;
     width: 78%;
+    margin-bottom: 2rem;
 }
 .benvenuto{
     height: 220px;
