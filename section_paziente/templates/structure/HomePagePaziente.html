@@ -19,7 +19,7 @@
     <div class="header-section">
         <h2>LOGO E NOME</h2>
         <div class="other">
-            <a href="{% url 'home-page' %}">
+            <a href="{% url 'home-page-paziente' %}">
                 <img src="{% static 'style/img/homepage/home.png' %}" alt="" width="40px" height="40px">
                 <p>home</p>
             </a>
@@ -37,7 +37,7 @@
 
         <div class="left-side-tools-bar">
 
-            <a href="" id="nuovo-assistito-btn" >
+            <a href="{% url 'profilo-paziente' %}" id="profilo-btn" >
                 <img src="{% static 'style/img/homepage/profilo.png' %}" alt="">
                 <p>Profilo</p>
             </a>
@@ -68,13 +68,6 @@
             
         </div>
             
-
-
-
-
-
-
-
         {% block main-content-section %}
 
             <div class="content-section">

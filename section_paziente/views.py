@@ -5,7 +5,6 @@ import requests
 
 from section_medico.models import Prenotazioni, ApiKeys
 
-# Create your views here.
 class LoginPaziente(View):
     def get(self, request):
         return render(request, "structure/login_paziente.html")
@@ -33,8 +32,6 @@ class LoginPaziente(View):
             print(f"Error: {response.status_code}")
             return render(request, "structure/HomePagePaziente.html")
         
-
-
 def HomePageRendering(request):
     api_key_instance = ApiKeys.objects.get(id=1)
     api_key = api_key_instance.ApiKeys
@@ -51,8 +48,11 @@ def HomePageRendering(request):
     if response.status_code == 200:
         news_data = response.json().get('articles', [])
 
-        return render(request, "structure/HomePageMedico.html", {'news_data': news_data})
+        return render(request, "structure/HomePagePaziente.html", {'news_data': news_data})
 
     else:
         print(f"Error: {response.status_code}")
         return render(request, "structure/HomePagePaziente.html")
+
+def ProfiloPaziente(request):
+    return render(request, "structure/includes/profilo.html")
