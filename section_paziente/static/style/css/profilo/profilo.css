@@ -33,3 +33,57 @@
     margin-top: 2rem;
     border: 1px solid lightgrey;
 }
+.info,
+.info-data{
+    width: 20%;
+    padding: 20px;
+    font-size: 16px;
+}
+.tools{
+    width: 30%;
+    position: absolute;
+    left: 78%;
+    padding: 20px;
+}
+.img{
+    width: 30%;
+}
+.img img{
+    padding: 20px 20px 20px 270px;
+}
+
+.tools div button{
+    border-radius: 5px;
+    border: none;   
+    margin-bottom: 0.2rem;
+}
+.tools div button:hover{
+    transform: scale(1.1);
+    background-color: #4CB9E7;
+    cursor: pointer;
+}
+
+
+.all-info{
+    display: flex;
+    width: 90%;
+    margin-left: 5%;
+    margin-top: 2rem;
+    border: 1px solid lightgrey;
+}
+.Residenza,
+.Contatti{
+    width: 50%;
+}
+.Residenza h3,
+.Contatti h3{
+    margin-left: 1rem;
+    color: rgb(83, 83, 83);
+}
+
+.residenza-content,
+.contatti-content{
+    display: flex;
+    padding: 0px 20px 20px 20px;
+}
+
